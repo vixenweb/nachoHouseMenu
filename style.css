@@ -1,0 +1,576 @@
+/* ===== NACHO HOUSE — Digital Menu (v2) ===== */
+/* Identity carried over from the printed menus + original build:
+   navy    #16284A  ink / structure
+   navy-2  #0D1930  deep shadow navy
+   red     #C1272D  accent / CTA / category rule
+   gold    #C99A3F  warm highlight, leader-dots, stars
+   cream   #FDFBF7  page background
+   paper   #F7F3E8  card / ticket background (slightly warmer than v1 cream-card)
+   Display (Latin logo): 'Rye' — kept, it's the brand mark.
+   Display (Persian):   'Lalezar' — bold western-poster energy that pairs with Rye.
+   Body (Persian):      'Vazirmatn' — kept, clean + wide weight range.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Rye&family=Lalezar&family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --navy: #16284A;
+  --navy-deep: #0D1930;
+  --red: #C1272D;
+  --gold: #C99A3F;
+  --gold-soft: #E4C583;
+  --cream: #FDFBF7;
+  --paper: #F7F3E8;
+  --paper-line: #E7DEC6;
+  --white: #FFFFFF;
+  --shadow: 0 10px 30px rgba(22, 40, 74, 0.12);
+  --shadow-lift: 0 18px 40px rgba(22, 40, 74, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--white);
+  color: var(--navy);
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+:focus-visible {
+  outline: 2.5px solid var(--red);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Checkerboard divider (signature motif) ---------- */
+.checker {
+  height: 14px;
+  width: 100%;
+  background-color: var(--white);
+  background-image:
+    linear-gradient(45deg, var(--navy) 25%, transparent 25%, transparent 75%, var(--navy) 75%),
+    linear-gradient(45deg, var(--navy) 25%, transparent 25%, transparent 75%, var(--navy) 75%);
+  background-size: 14px 14px;
+  background-position: 0 0, 7px 7px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  padding: 22px 16px 0;
+  text-align: center;
+  position: relative;
+  background: var(--white);
+}
+
+.header-inner { position: relative; display: inline-block; }
+
+.star {
+  position: absolute;
+  color: var(--gold);
+  font-size: 14px;
+  opacity: 0.85;
+  animation: twinkle 2.6s ease-in-out infinite;
+}
+.star.s1 { top: -6px; left: -26px; font-size: 12px; animation-delay: 0.2s; }
+.star.s2 { top: 6px; right: -30px; font-size: 16px; animation-delay: 0.8s; }
+.star.s3 { bottom: -10px; left: -14px; font-size: 10px; color: var(--red); animation-delay: 1.3s; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.35; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.brand-title {
+  font-family: 'Rye', 'Vazirmatn', serif;
+  font-size: clamp(34px, 9vw, 52px);
+  color: var(--navy);
+  letter-spacing: 1px;
+  margin: 0;
+  line-height: 1;
+}
+
+.brand-rule {
+  width: 64px;
+  height: 3px;
+  background: var(--red);
+  margin: 10px auto 8px;
+  border-radius: 2px;
+}
+
+.brand-tagline {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--red);
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+
+.site-header .checker { margin-top: 14px; }
+
+/* ---------- Main ---------- */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px 18px 40px;
+}
+
+/* ---------- Home: choice cards ---------- */
+.intro {
+  text-align: center;
+  margin-bottom: 26px;
+}
+.intro p {
+  color: var(--navy);
+  opacity: 0.75;
+  font-size: 15px;
+  margin: 0;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 560px) {
+  .choice-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.choice-card {
+  display: block;
+  background: var(--paper);
+  border: 2px solid var(--navy);
+  border-radius: 18px;
+  padding: 34px 22px 28px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: var(--shadow);
+  isolation: isolate;
+}
+
+.choice-card:active { transform: scale(0.97); }
+
+@media (hover: hover) {
+  .choice-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lift);
+  }
+  .choice-card:hover .choice-icon { transform: scale(1.12) rotate(-4deg); }
+  .choice-card:hover::after { transform: translateX(140%) skewX(-12deg); }
+}
+
+.choice-card::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed var(--gold);
+  border-radius: 13px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* The home-card hover light sweep is intentionally removed. */
+
+.choice-badge {
+  position: absolute;
+  top: 12px;
+  inset-inline-start: 12px;
+  font-family: 'Lalezar', 'Vazirmatn', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  padding: 3px 9px;
+  opacity: 0.85;
+}
+
+.choice-icon {
+  font-size: 46px;
+  margin-bottom: 12px;
+  display: block;
+  transition: transform 0.35s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.icon-sparkles {
+  position: absolute;
+  width: 104px;
+  height: 82px;
+  left: 50%;
+  top: 34px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.icon-sparkle {
+  position: absolute;
+  color: var(--gold);
+  line-height: 1;
+  text-shadow: 0 0 7px rgba(201, 154, 63, 0.28);
+  animation: icon-sparkle-twinkle 2.2s ease-in-out infinite;
+}
+
+.sparkle-1 { top: 4px; right: 8px; font-size: 15px; animation-delay: 0s; }
+.sparkle-2 { top: 30px; left: 3px; font-size: 11px; color: var(--red); animation-delay: .55s; }
+.sparkle-3 { bottom: 3px; right: 18px; font-size: 12px; animation-delay: 1.05s; }
+.sparkle-4 { bottom: 19px; left: 17px; font-size: 18px; animation-delay: 1.55s; }
+
+@keyframes icon-sparkle-twinkle {
+  0%, 100% { opacity: .28; transform: scale(.72) rotate(0deg); }
+  45% { opacity: 1; transform: scale(1.12) rotate(10deg); }
+  70% { opacity: .55; transform: scale(.9) rotate(-6deg); }
+}
+
+.choice-title {
+  font-family: 'Lalezar', 'Vazirmatn', sans-serif;
+  font-size: 27px;
+  font-weight: 400;
+  color: var(--navy);
+  margin: 0 0 8px;
+  letter-spacing: 0.5px;
+}
+
+.choice-card.food .choice-title { color: var(--red); }
+.choice-card.drinks .choice-title { color: var(--navy); }
+
+.choice-desc {
+  font-size: 13.5px;
+  color: var(--navy);
+  opacity: 0.75;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.choice-underline {
+  width: 36px;
+  height: 2px;
+  background: var(--gold);
+  margin: 10px auto 12px;
+  border-radius: 2px;
+}
+
+/* ---------- Menu pages ---------- */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--red);
+  border: 1.5px solid var(--red);
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.back-link:active { background: var(--red); color: var(--white); }
+@media (hover: hover) {
+  .back-link:hover { background: var(--red); color: var(--white); }
+}
+
+.page-title {
+  font-family: 'Lalezar', 'Vazirmatn', sans-serif;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--navy);
+  margin: 0 0 4px;
+  letter-spacing: 0.5px;
+}
+
+.page-subtitle {
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  color: var(--red);
+  font-weight: 600;
+  margin: 0 0 26px;
+}
+
+/* promo strip, carried over from the printed food menu's callout */
+.promo-strip {
+  text-align: center;
+  background: var(--navy);
+  color: var(--gold-soft);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 28px;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.9;
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Category card ---------- */
+.category {
+  background: var(--paper);
+  border: 1.5px solid var(--paper-line);
+  border-radius: 16px;
+  padding: 20px 18px 8px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.category.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.category-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.category-icon {
+  width: 38px;
+  height: 38px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  background: var(--white);
+  border: 1.5px solid var(--red);
+  border-radius: 50%;
+}
+
+.category-name {
+  font-family: 'Lalezar', 'Vazirmatn', sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  color: var(--red);
+  letter-spacing: 0.3px;
+}
+
+.category-rule {
+  height: 2px;
+  background: repeating-linear-gradient(90deg, var(--gold) 0 8px, transparent 8px 14px);
+  margin: 10px 0 6px;
+  transform-origin: right;
+  animation: draw-rule 0.9s ease forwards;
+}
+
+@keyframes draw-rule {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.category-note {
+  font-size: 12px;
+  color: var(--navy);
+  opacity: 0.65;
+  margin: 0 0 10px;
+}
+
+/* ---------- Item rows ---------- */
+.item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: block;
+  padding: 13px 2px 12px;
+  border-bottom: 1px dashed var(--paper-line);
+  transition: background 0.2s ease;
+}
+
+.item:last-child { border-bottom: none; }
+
+@media (hover: hover) {
+  .item:hover { background: rgba(201, 154, 63, 0.06); }
+  .item:hover .item-name { color: var(--red); }
+}
+
+.item-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  direction: rtl;
+}
+
+.item-name {
+  min-width: 0;
+  font-weight: 700;
+  font-size: 15.5px;
+  color: var(--navy);
+  line-height: 1.55;
+  transition: color 0.2s ease;
+}
+
+.item-price {
+  flex: none;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--navy);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  direction: rtl;
+}
+
+.item-price .rial {
+  font-size: 10.5px;
+  font-weight: 600;
+  opacity: 0.65;
+  margin-inline-start: 3px;
+}
+
+.item-desc {
+  width: 100%;
+  font-size: 12.5px;
+  color: var(--navy);
+  opacity: 0.62;
+  margin: 3px 0 0;
+  line-height: 1.75;
+  text-align: right;
+}
+
+@media (max-width: 420px) {
+  .category {
+    padding: 17px 13px 6px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+  }
+
+  .category-head { gap: 8px; }
+
+  .category-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 17px;
+  }
+
+  .category-name { font-size: 19px; }
+
+  .item {
+    padding: 12px 1px 11px;
+  }
+
+  .item-head {
+    gap: 10px;
+  }
+
+  .item-name {
+    font-size: 14.5px;
+  }
+
+  .item-price {
+    font-size: 13px;
+  }
+
+  .item-desc {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+}
+
+
+/* ---------- Mobile-first polish ---------- */
+@media (max-width: 559px) {
+  main {
+    padding: 20px 12px 30px;
+  }
+
+  .site-header {
+    padding-top: 18px;
+  }
+
+  .brand-title {
+    font-size: clamp(30px, 10vw, 42px);
+  }
+
+  .choice-grid {
+    gap: 14px;
+  }
+
+  .choice-card {
+    padding: 31px 17px 25px;
+    border-radius: 15px;
+  }
+
+  .choice-desc {
+    font-size: 12.5px;
+  }
+
+  .back-link {
+    font-size: 13px;
+    padding: 7px 13px;
+    margin-bottom: 16px;
+  }
+
+  .page-title {
+    font-size: 27px;
+  }
+
+  .page-subtitle {
+    margin-bottom: 20px;
+  }
+
+  .promo-strip {
+    margin-bottom: 20px;
+    padding: 10px 12px;
+  }
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background: var(--navy);
+  color: var(--cream);
+  text-align: center;
+  padding: 26px 16px 22px;
+  margin-top: auto;
+}
+
+footer .checker { margin-bottom: 18px; opacity: 0.9; }
+
+.footer-line {
+  font-size: 14px;
+  margin: 6px 0;
+  color: var(--cream);
+}
+
+.footer-line.address { font-weight: 600; }
+
+.footer-line a { color: var(--gold); font-weight: 600; }
+
+.footer-note {
+  font-family: 'Lalezar', 'Vazirmatn', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-top: 14px;
+  opacity: 0.9;
+}
