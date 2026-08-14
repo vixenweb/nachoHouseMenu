@@ -1,55 +1,42 @@
-# Nacho House — منوی دیجیتال + پنل مدیریت قیمت
+# Nacho House — Digital Menu
 
-چون `pages.dev` و زیرساخت‌های کلادفلر برای کاربران ایران فیلترن و مشتری هم دامنه‌ی اختصاصی نمی‌خواد، این نسخه
-کاملاً روی **گیت‌هاب‌پیجز** کار می‌کنه — بدون هیچ سرور، دامنه یا سرویس اضافه‌ای.
+A fully responsive, RTL Persian digital menu for a café/restaurant, with a built-in admin panel
+that lets the owner update prices from their phone — with **zero backend, zero hosting cost, and
+no dedicated domain.**
 
-## ایده‌ی کار
-- قیمت‌ها دیگه داخل HTML نیستن؛ همه‌شون توی یک فایل ساده به اسم `prices.json` (در ریشه‌ی همین ریپو) نگه
-  داشته می‌شن. `food.html` و `drinks.html` این فایل رو می‌خونن و قیمت‌ها رو نمایش می‌دن.
-- صفحه‌ی `admin/` هم روی همون گیت‌هاب‌پیجز هاست می‌شه، ولی به‌جای اینکه یک سرور مخصوص خودمون داشته باشیم،
-  مستقیماً به **API خود گیت‌هاب** (`api.github.com`) وصل می‌شه و با یک توکن دسترسی، فایل `prices.json` رو
-  آپدیت (کامیت) می‌کنه.
-- بعد از هر ذخیره، گیت‌هاب‌پیجز خودکار ظرف حدود ۱ دقیقه سایت رو دوباره دیپلوی می‌کنه و قیمت‌های جدید روی
-  منو میان.
-- امنیت این بخش رو **خود گیت‌هاب** تضمین می‌کنه: بدون توکن معتبر، درخواست تغییر فایل با خطا رد می‌شه. این
-  دقیقاً هم‌ارز Basic Auth‌ه، با این تفاوت که «سرور»ش گیت‌هابه، نه یک سرویسی که ممکنه در ایران فیلتر باشه.
 
-## ۱) فعال‌سازی گیت‌هاب‌پیجز
-1. توی ریپوی `vixenweb/nachoHouseMenu`: **Settings → Pages**
-2. زیر «Build and deployment»: **Source → Deploy from a branch**
-3. **Branch: main، پوشه: `/ (root)`** رو انتخاب و Save کنید.
-4. بعد از چند دقیقه، آدرس سایت این شکلیه: `https://vixenweb.github.io/nachoHouseMenu/`
+## Stack
 
-## ۲) ساخت توکن دسترسی برای پنل ادمین
-این توکن دقیقاً نقش «رمز عبور» پنل ادمین رو بازی می‌کنه، فقط با این تفاوت که گیت‌هاب خودش صحتش رو چک می‌کنه:
+- **HTML5 / CSS3** — custom-property design tokens, RTL layout, `Rye` + `Lalezar` + `Vazirmatn`
+  Google Fonts pairing to match the café's print-menu branding
+- **Vanilla JavaScript** (no frameworks/build step) — `IntersectionObserver` for scroll-reveal
+  animation, `fetch` for data loading
+- **GitHub Pages** — static hosting, auto-deploys on every push to `main`
+- **GitHub REST API as the backend** — the admin panel authenticates with a repo-scoped
+  fine-grained Personal Access Token and commits updated prices straight to `prices.json` via the
+  Contents API (`GET`/`PUT` with base64-encoded, UTF-8-safe content). GitHub enforces the
+  authentication server-side — there's no custom auth server to build, host, or secure.
+- **JSON as the data layer** — `prices.json` decouples pricing from markup; the public pages and
+  the admin panel both read/write the same single source of truth.
 
-1. در گیت‌هاب: **Settings حساب کاربری (نه ریپو) → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token**
-2. **Token name:** مثلاً `nacho-house-admin`
-3. **Expiration:** یک بازه‌ی معقول، مثلاً ۱ سال (بعداً قابل تمدید یا صدور دوباره‌ست)
-4. **Resource owner:** `vixenweb`
-5. **Repository access → Only select repositories → nachoHouseMenu**
-6. **Permissions → Repository permissions → Contents → Read and write** (فقط همین یکی کافیه، بقیه رو دست
-   نزنید)
-7. **Generate token** و توکن (چیزی شبیه `github_pat_...`) رو کپی کنید — گیت‌هاب فقط همین یک بار نشونش می‌ده.
+## How it works
 
-این توکن رو به صاحب کافه بدید تا فقط همون یک بار، هنگام اولین ورود به پنل ادمین، واردش کنه (تیک «این دستگاه
-رو به‌خاطر بسپار» رو هم بزنه تا دیگه هر بار نپرسه).
+1. Menu pages (`food.html`, `drinks.html`) render item names/descriptions statically, then fetch
+   `prices.json` client-side and fill in the prices.
+2. `admin/` is a plain static page — no server-side auth is possible on GitHub Pages, so instead of
+   building a fake client-side login, it uses a real GitHub Personal Access Token as the
+   credential. The token is checked by GitHub itself on every read/write.
+3. Saving in the admin panel = one authenticated `PUT` to the GitHub Contents API → a real git
+   commit → GitHub Pages redeploys automatically (~1 minute) → live prices update.
 
-## ۳) استفاده
-- منوی عمومی: `https://vixenweb.github.io/nachoHouseMenu/`
-- پنل مدیریت: `https://vixenweb.github.io/nachoHouseMenu/admin/` — توکن بالا رو یک‌بار وارد می‌کنه، همه‌ی
-  ۶۰ آیتم به‌تفکیک دسته میاد، قیمت‌ها رو (به ریال) پر می‌کنه و «ذخیره قیمت‌ها» رو می‌زنه.
+## Highlights
 
-## نکات امنیتی
-- توکن فقط روی همون مرورگر/دستگاهی که واردش کردید ذخیره می‌شه (در `localStorage`) و فقط برای
-  `api.github.com` فرستاده می‌شه؛ هیچ‌جای دیگه‌ای ذخیره یا ارسال نمی‌شه.
-- چون توکن «Fine-grained» و محدود به همین یک ریپو و فقط دسترسی Contents هست، حتی اگه لو بره، بیشترین کاری
-  که باهاش می‌شه کرد ویرایش فایل‌های همین یک ریپوئه — نه هیچ ریپوی دیگه یا حساب کاربری.
-- اگه فکر می‌کنید توکن لو رفته: **Settings → Developer settings → Fine-grained tokens →** پیدا کردن همین
-  توکن → **Delete**. بلافاصله از کار می‌افته و می‌تونید یکی جدید بسازید.
-- «خروج از پنل» توی صفحه‌ی ادمین فقط توکن رو از همون مرورگر پاک می‌کنه؛ برای غیرفعال کردن کامل توکن باید از
-  همون روش بالا حذفش کنید.
+- 100% static, $0/month, no domain required
+- Real, server-enforced authentication without running any server
+- Region-resilient: only depends on domains (`github.com`, `api.github.com`) known to be reachable
+  for the target users
+- Scroll-triggered reveal animations and micro-interactions built with plain CSS + JS, no animation
+  libraries
 
-## اگه بعداً آیتم منو اضافه/کم شد
-باید سه‌جا هماهنگ بمونن: `food.html`/`drinks.html` (با `data-price-id` جدید)، `prices.json`، و
-`admin/admin.js` (لیست `GROUPS`). هر وقت لازم شد بگید تا خودم این هماهنگی رو انجام بدم.
+---
+**Live site:** https://vixenweb.github.io/nachoHouseMenu/
