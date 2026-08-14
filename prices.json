@@ -77,67 +77,67 @@
   },
   "coffee-espresso-single": {
     "name": "اسپرسو تک",
-    "amount": null
+    "amount": 990000
   },
   "coffee-espresso-double": {
     "name": "اسپرسو دبل",
-    "amount": null
+    "amount": 990000
   },
   "coffee-americano": {
     "name": "امریکانو",
-    "amount": null
+    "amount": 1490000
   },
   "coffee-cappuccino": {
     "name": "کاپوچینو",
-    "amount": null
+    "amount": 1790000
   },
   "coffee-nescafe-milk": {
     "name": "شیر نسکافه",
-    "amount": null
+    "amount": 1950000
   },
   "coffee-latte-biscuit": {
     "name": "لته بیسکویت",
-    "amount": null
+    "amount": 2390000
   },
   "coffee-latte-macchiato": {
     "name": "لته ماکیاتو",
-    "amount": null
+    "amount": 2290000
   },
   "coffee-latte": {
     "name": "لته",
-    "amount": null
+    "amount": 1890000
   },
   "cold-lemonade": {
     "name": "لیموناد",
-    "amount": null
+    "amount": 2190000
   },
   "cold-redvelvet": {
     "name": "رد ولوت",
-    "amount": null
+    "amount": 2790000
   },
   "cold-pinacolada": {
     "name": "پینوکولا",
-    "amount": null
+    "amount": 2990000
   },
   "cold-mojito": {
     "name": "موهیتو",
-    "amount": null
+    "amount": 2490000
   },
   "cold-redmojito": {
     "name": "رد موهیتو",
-    "amount": null
+    "amount": 2690000
   },
   "cold-goldenberry": {
     "name": "گلدن بری",
-    "amount": null
+    "amount": 3190000
   },
   "cold-bluesky": {
     "name": "بلو اسکای",
-    "amount": null
+    "amount": 2490000
   },
   "hot-chocolate": {
     "name": "هات چاکلت",
-    "amount": null
+    "amount": 1950000
   },
   "hot-pink-chocolate": {
     "name": "پینک چاکلت",
