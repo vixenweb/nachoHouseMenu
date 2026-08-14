@@ -29,6 +29,30 @@
     bytes.forEach(function (b) { binary += String.fromCharCode(b); });
     return btoa(binary);
   }
+
+  // ---------- Number formatting helpers ----------
+  function formatWithCommas(n) {
+    if (n === null || n === undefined || n === '') return '';
+    var num = Number(n);
+    if (isNaN(num)) return '';
+    return num.toLocaleString('en-US');
+  }
+
+  function attachFormattingListeners() {
+    var inputs = formEl.querySelectorAll('input[data-price-id]');
+    inputs.forEach(function (inp) {
+      inp.addEventListener('input', function (e) {
+        var raw = e.target.value.replace(/,/g, '').replace(/[^0-9]/g, '');
+        if (raw === '') { e.target.value = ''; return; }
+        e.target.value = raw.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      });
+      // On blur, ensure formatting is applied (useful if pasted)
+      inp.addEventListener('blur', function (e) {
+        var raw = e.target.value.replace(/,/g, '').replace(/[^0-9]/g, '');
+        e.target.value = raw === '' ? '' : raw.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      });
+    });
+  }
   function base64ToUtf8(b64) {
     var binary = atob(b64.replace(/\n/g, ''));
     var bytes = new Uint8Array(binary.length);
@@ -100,14 +124,15 @@
         fieldWrap.className = 'field';
 
         var input = document.createElement('input');
-        input.type = 'number';
+        // Use text input so we can show formatted numbers with commas as the
+        // user requested. Use inputmode numeric for mobile keyboards.
+        input.type = 'text';
         input.inputMode = 'numeric';
-        input.min = '0';
-        input.step = '1000';
         input.id = 'price-' + id;
         input.dataset.priceId = id;
-        input.placeholder = 'قیمت';
-        if (entry.amount !== null && entry.amount !== undefined) input.value = entry.amount;
+        input.placeholder = entry.amount !== null && entry.amount !== undefined ? formatWithCommas(entry.amount) : 'قیمت';
+        // Leave value empty so previous price appears as a faded placeholder.
+        input.value = '';
         fieldWrap.appendChild(input);
 
         var unit = document.createElement('span');
@@ -123,6 +148,8 @@
     });
     formEl.innerHTML = '';
     formEl.appendChild(frag);
+    // Wire up formatting for the newly-created inputs
+    attachFormattingListeners();
   }
 
   function unlock(token, remember) {
@@ -180,7 +207,8 @@
     var merged = {};
     Object.keys(state.prices).forEach(function (id) {
       var input = document.getElementById('price-' + id);
-      var val = input && input.value !== '' ? Number(input.value) : null;
+      var raw = input && input.value ? input.value.replace(/,/g, '').trim() : '';
+      var val = raw !== '' ? Number(raw) : null;
       merged[id] = { name: state.prices[id].name, amount: val !== null && !isNaN(val) ? val : null };
     });
 

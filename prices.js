@@ -28,3 +28,32 @@
       // Leave the "—" placeholders in place if prices.json can't be loaded.
     });
 })();
+
+// Ensure category cards become visible even if a separate reveal script
+// isn't present. Use IntersectionObserver when available, otherwise add
+// the class immediately so `.category` doesn't stay at opacity: 0.
+(function () {
+  function revealCategories() {
+    var cats = document.querySelectorAll('.category');
+    if (!cats || cats.length === 0) return;
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      cats.forEach(function (c) { obs.observe(c); });
+    } else {
+      cats.forEach(function (c) { c.classList.add('in-view'); });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', revealCategories);
+  } else {
+    revealCategories();
+  }
+})();
