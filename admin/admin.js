@@ -16,7 +16,7 @@
     { title: 'سالاد', icon: '🥗', ids: ['salad-caesar'] },
     { title: 'کافی', icon: '☕', ids: ['coffee-plain','coffee-espresso-single','coffee-espresso-double','coffee-americano','coffee-cappuccino','coffee-nescafe-milk','coffee-latte-biscuit','coffee-latte-macchiato','coffee-latte'] },
     { title: 'نوشیدنی سرد', icon: '🍹', ids: ['cold-lemonade','cold-redvelvet','cold-pinacolada','cold-mojito','cold-redmojito','cold-goldenberry','cold-bluesky'] },
-    { title: 'نوشیدنی گرم', icon: '🍫', ids: ['hot-chocolate','hot-pink-chocolate','hot-hazelnut','hot-milk-biscuit','hot-milk-honey','hot-tea-brewed','hot-tea-masala','hot-tea-kork'] },
+    { title: 'نوشیدنی گرم', icon: '☕', ids: ['hot-chocolate','hot-pink-chocolate','hot-hazelnut','hot-milk-biscuit','hot-milk-honey','hot-tea-brewed','hot-tea-masala','hot-tea-kork'] },
     { title: 'ماچا اسپرولینا', icon: '🍵', ids: ['matcha-ice-spirulina-latte','matcha-ice-matcha-latte','matcha-spirulina-latte','matcha-latte'] },
     { title: 'شیک', icon: '🥤', ids: ['shake-vanilla','shake-chocolate','shake-nutella','shake-lotus','shake-strawberry','shake-banana-chocolate','shake-peanut'] },
     { title: 'بار سرد', icon: '🧊', ids: ['coldbar-ice-americano','coldbar-ice-macchiato','coldbar-ice-romano','coldbar-ice-latte','coldbar-affogato-classic','coldbar-affogato-lotus','coldbar-affogato-nutella'] },
@@ -173,9 +173,9 @@
       .catch(function (err) {
         gateErrorEl.classList.add('show');
         if (err.status === 404) {
-          gateErrorEl.textContent = 'فایل prices.json یا مخزن پیدا نشد. با سازنده‌ی سایت تماس بگیرید.';
+          gateErrorEl.textContent = 'فایل prices.json یا مخزن پیدا نشد. با توسعه دهنده تماس بگیرید.';
         } else {
-          gateErrorEl.textContent = 'توکن نامعتبره یا دسترسی لازم رو نداره. دوباره امتحان کنید.';
+          gateErrorEl.textContent = 'توکن نامعتبره. دوباره امتحان کنید.';
         }
       })
       .finally(function () {
@@ -202,7 +202,7 @@
   formEl.addEventListener('submit', function (e) {
     e.preventDefault();
     saveBtnEl.disabled = true;
-    setStatus('در حال ذخیره روی گیت‌هاب…', 'loading');
+    setStatus('در حال ذخیره ', 'loading');
 
     var merged = {};
     Object.keys(state.prices).forEach(function (id) {

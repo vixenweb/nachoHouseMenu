@@ -13,6 +13,22 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Rye&family=Lalezar&family=Vazirmatn:wght@400;500;600;700;800&display=swap');
 
+/* Local Persian fonts placed in assets/fonts/ (provided by the project owner) */
+@font-face {
+  font-family: 'LalezarFile1';
+  src: url('assets/fonts/Lalezar-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LalezarFile2';
+  src: url('assets/fonts/Lalezar-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --navy: #16284A;
   --navy-deep: #0D1930;
@@ -261,6 +277,12 @@ main {
   margin: 0 0 8px;
   letter-spacing: 0.5px;
 }
+
+/* Apply the downloaded fonts specifically to the main index page choice titles.
+   Use the two local files (even if they are the same family) so the user can
+   visually distinguish or swap them later. */
+.choice-card.food .choice-title { font-family: 'LalezarFile1', 'Vazirmatn', sans-serif; }
+.choice-card.drinks .choice-title { font-family: 'LalezarFile2', 'Vazirmatn', sans-serif; }
 
 .choice-card.food .choice-title { color: var(--navy); }
 .choice-card.drinks .choice-title { color: var(--navy); }
@@ -588,15 +610,25 @@ footer .checker { margin-bottom: 18px; opacity: 0.9; }
   color: var(--cream);
 }
 
-.footer-line.address { font-weight: 600; }
+.footer-line.address { font-weight: 100; }
 
-.footer-line a { color: var(--gold); font-weight: 600; }
+.footer-line a { color: var(--gold); font-weight: 100; }
 
 .footer-note {
-  font-family: 'Lalezar', 'Vazirmatn', sans-serif;
-  font-size: 12px;
+  font-family: 'LalezarFile1', 'Vazirmatn', sans-serif;
+  font-size: 13px;
   letter-spacing: 2px;
   color: var(--gold);
   margin-top: 14px;
   opacity: 0.9;
 }
+
+.choice-title {
+    font-family: 'LalezarFile1' !important;
+}
+.food .choice-title {
+    font-family: 'LalezarFile1' !important;
+}
+/* .footer-line {
+    font-family: 'LalezarFile1', sans-serif;
+} */
