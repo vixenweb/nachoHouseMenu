@@ -1,0 +1,12 @@
+{
+  "name": "nacho-house",
+  "compatibility_date": "2026-08-13",
+  "pages_build_output_dir": ".",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "nacho-house-menu",
+      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+    }
+  ]
+}

@@ -25,23 +25,32 @@
     <h2 class="page-title">منوی غذا</h2>
     <p class="page-subtitle">FOOD MENU</p>
 
+    <nav class="menu-categories" aria-label="دسته‌بندی‌های منوی غذا">
+      <a href="#burger">برگر</a>
+      <a href="#nachos">ناچوز</a>
+      <a href="#pasta">پاستا</a>
+      <a href="#fries">سیب زمینی</a>
+      <a href="#salad">سالاد</a>
+    </nav>
+
     <p class="promo-strip">🌶️ اگه چیپستو خودت بیاری، نوشابه رایگانه!</p>
 
     <!-- برگر -->
-    <section class="category">
+    <section class="category" id="burger">
       <div class="category-head">
         <span class="category-icon">🍔</span>
         <h3 class="category-name">برگر</h3>
       </div>
+      <p class="category-note burger-note">تمامی آیتم‌های برگر با سس‌های کچاپ، مک و باربیکیو قابل سرو است.</p>
       <div class="category-rule"></div>
       <ul class="item-list">
-        <li class="item"><div class="item-head"><span class="item-name">کلاسیک برگر</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱۵۰ گرم برگر دست‌ساز، نان شرکتی، کاهو، خیارشور، گوجه، سیب</p></li>
-        <li class="item"><div class="item-head"><span class="item-name">اسپایسی برگر</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱۵۰ گرم برگر دست‌ساز، نان شرکتی، فلفل هالوپینو، کاهو، خیارشور، گوجه، سیب، پنیر گودا</p></li>
-        <li class="item"><div class="item-head"><span class="item-name">کارامِلایز برگر</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱۵۰ گرم برگر دست‌ساز، نان شرکتی، پیاز کارامل، پیاز حلقه‌ای، کاهو، خیارشور، گوجه، سیب، پنیر گودا</p></li>
-        <li class="item"><div class="item-head"><span class="item-name">چیز برگر</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱۵۰ گرم برگر دست‌ساز، نان شرکتی، کاهو، خیارشور، گوجه، سیب، پنیر گودا</p></li>
-        <li class="item"><div class="item-head"><span class="item-name">بیکن برگر</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱۵۰ گرم برگر دست‌ساز، نان شرکتی، ۱ ورق بیکن گوشت، کاهو، خیارشور، گوجه، سیب، پنیر گودا</p></li>
-        <li class="item"><div class="item-head"><span class="item-name">چیکن برگر</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱۵۰ گرم برگر دست‌ساز، نان شرکتی، ۱ عدد فیله، کاهو، خیارشور، گوجه، سیب، پنیر گودا</p></li>
-        <li class="item"><div class="item-head"><span class="item-name">ماشروم برگر</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱۵۰ گرم برگر دست‌ساز، نان شرکتی، سس قارچ، کاهو، خیارشور، گوجه، سیب</p></li>
+        <li class="item" data-item-id="food-001"><div class="item-head"><span class="item-name">کلاسیک برگر</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱۵۰ گرم برگر دست‌ساز، نان شرکتی، کاهو، خیارشور، گوجه، سیب</p></li>
+        <li class="item" data-item-id="food-002"><div class="item-head"><span class="item-name">اسپایسی برگر</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱۵۰ گرم برگر دست‌ساز، نان شرکتی، فلفل هالوپینو، کاهو، خیارشور، گوجه، سیب، پنیر گودا</p></li>
+        <li class="item" data-item-id="food-003"><div class="item-head"><span class="item-name">کارامِلایز برگر</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱۵۰ گرم برگر دست‌ساز، نان شرکتی، پیاز کارامل، پیاز حلقه‌ای، کاهو، خیارشور، گوجه، سیب، پنیر گودا</p></li>
+        <li class="item" data-item-id="food-004"><div class="item-head"><span class="item-name">چیز برگر</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱۵۰ گرم برگر دست‌ساز، نان شرکتی، کاهو، خیارشور، گوجه، سیب، پنیر گودا</p></li>
+        <li class="item" data-item-id="food-005"><div class="item-head"><span class="item-name">بیکن برگر</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱۵۰ گرم برگر دست‌ساز، نان شرکتی، ۱ ورق بیکن گوشت، کاهو، خیارشور، گوجه، سیب، پنیر گودا</p></li>
+        <li class="item" data-item-id="food-006"><div class="item-head"><span class="item-name">چیکن برگر</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱۵۰ گرم برگر دست‌ساز، نان شرکتی، ۱ عدد فیله، کاهو، خیارشور، گوجه، سیب، پنیر گودا</p></li>
+        <li class="item" data-item-id="food-007"><div class="item-head"><span class="item-name">ماشروم برگر</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱۵۰ گرم برگر دست‌ساز، نان شرکتی، سس قارچ، کاهو، خیارشور، گوجه، سیب</p></li>
       </ul>
     </section>
 
@@ -53,66 +62,64 @@
       </div>
       <div class="category-rule"></div>
       <ul class="item-list">
-        <li class="item"><div class="item-head"><span class="item-name">رویال کامبو</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱۵۰ گرم برگر دست‌ساز، ۲ عدد نان تست‌شده، ۳ تکه فیله، دورچین و گارنیش</p></li>
+        <li class="item" data-item-id="food-008"><div class="item-head"><span class="item-name">رویال کامبو</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱۵۰ گرم برگر دست‌ساز، ۲ عدد نان تست‌شده، ۳ تکه فیله، دورچین و گارنیش</p></li>
       </ul>
     </section>
 
     <!-- ناچوز -->
-    <section class="category">
+    <section class="category" id="nachos">
       <div class="category-head">
         <span class="category-icon">🌮</span>
         <h3 class="category-name">ناچوز</h3>
       </div>
       <div class="category-rule"></div>
       <ul class="item-list">
-        <li class="item"><div class="item-head"><span class="item-name">ناچوز مرغ</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">چیپس، فیله مرغ، تاپینگ دلخواه، سس انتخابی</p></li>
-        <li class="item"><div class="item-head"><span class="item-name">ناچوز گوشت</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">چیپس، گوشت، تاپینگ دلخواه، سس انتخابی</p></li>
-        <li class="item"><div class="item-head"><span class="item-name">ناچوز میکس</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">چیپس، فیله مرغ، گوشت، تاپینگ دلخواه، سس انتخابی</p></li>
+        <li class="item" data-item-id="food-009"><div class="item-head"><span class="item-name">ناچوز مرغ</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">چیپس، فیله مرغ، تاپینگ دلخواه، سس انتخابی</p></li>
+        <li class="item" data-item-id="food-010"><div class="item-head"><span class="item-name">ناچوز گوشت</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">چیپس، گوشت، تاپینگ دلخواه، سس انتخابی</p></li>
+        <li class="item" data-item-id="food-011"><div class="item-head"><span class="item-name">ناچوز میکس</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">چیپس، فیله مرغ، گوشت، تاپینگ دلخواه، سس انتخابی</p></li>
       </ul>
     </section>
 
     <!-- پاستا -->
-    <section class="category">
+    <section class="category" id="pasta">
       <div class="category-head">
         <span class="category-icon">🍝</span>
         <h3 class="category-name">پاستا</h3>
       </div>
       <div class="category-rule"></div>
       <ul class="item-list">
-        <li class="item"><div class="item-head"><span class="item-name">پنه آلفردو</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">پنه، سس آلفردو، قارچ، گارنیش</p></li>
-        <li class="item"><div class="item-head"><span class="item-name">چیکن آلفردو</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">پنه، سس آلفردو، تکه فیله، گارنیش</p></li>
+        <li class="item" data-item-id="food-012"><div class="item-head"><span class="item-name">پنه آلفردو</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">پنه، سس آلفردو، قارچ، گارنیش</p></li>
+        <li class="item" data-item-id="food-013"><div class="item-head"><span class="item-name">چیکن آلفردو</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">پنه، سس آلفردو، تکه فیله، گارنیش</p></li>
       </ul>
       <p class="category-note">سس‌های جانبی: کچاپ، باربیکیو، مایونز، چیلی تای، خردل، سس سیر دست‌ساز، سس بربری</p>
     </section>
 
     <!-- سیب زمینی -->
-    <section class="category">
+    <section class="category" id="fries">
       <div class="category-head">
         <span class="category-icon">🍟</span>
         <h3 class="category-name">سیب زمینی</h3>
       </div>
       <div class="category-rule"></div>
       <ul class="item-list">
-        <li class="item"><div class="item-head"><span class="item-name">فرنچ فرایز</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۳۰۰ گرم سیب‌زمینی شرکتی</p></li>
-        <li class="item"><div class="item-head"><span class="item-name">سیب آلفردو</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">سیب‌زمینی شرکتی، سس آلفردو، قارچ، گارنیش</p></li>
-        <li class="item"><div class="item-head"><span class="item-name">سیب آلفردو اسپشیال</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">سیب‌زمینی شرکتی، سس آلفردو، ۱ عدد فیله، قارچ، گارنیش</p></li>
-        <li class="item"><div class="item-head"><span class="item-name">سیب بیکن</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">سیب‌زمینی شرکتی، ۲ ورق بیکن گوشت، دیپ چدار، گارنیش</p></li>
+        <li class="item" data-item-id="food-014"><div class="item-head"><span class="item-name">فرنچ فرایز</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۳۰۰ گرم سیب‌زمینی شرکتی</p></li>
+        <li class="item" data-item-id="food-015"><div class="item-head"><span class="item-name">سیب آلفردو</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">سیب‌زمینی شرکتی، سس آلفردو، قارچ، گارنیش</p></li>
+        <li class="item" data-item-id="food-016"><div class="item-head"><span class="item-name">سیب آلفردو اسپشیال</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">سیب‌زمینی شرکتی، سس آلفردو، ۱ عدد فیله، قارچ، گارنیش</p></li>
+        <li class="item" data-item-id="food-017"><div class="item-head"><span class="item-name">سیب بیکن</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">سیب‌زمینی شرکتی، ۲ ورق بیکن گوشت، دیپ چدار، گارنیش</p></li>
       </ul>
     </section>
 
     <!-- سالاد -->
-    <section class="category">
+    <section class="category" id="salad">
       <div class="category-head">
         <span class="category-icon">🥗</span>
         <h3 class="category-name">سالاد</h3>
       </div>
       <div class="category-rule"></div>
       <ul class="item-list">
-        <li class="item"><div class="item-head"><span class="item-name">سالاد سزار</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱ تکه فیله، کاهو پیچ، ۲ عدد نان تست‌شده، خردل، گوجه گیلاسی، زیتون سیاه</p></li>
+        <li class="item" data-item-id="food-018"><div class="item-head"><span class="item-name">سالاد سزار</span><span class="item-price">۰۰۰٬۰۰۰<span class="rial">ریال</span></span></div><p class="item-desc">۱ تکه فیله، کاهو پیچ، ۲ عدد نان تست‌شده، خردل، گوجه گیلاسی، زیتون سیاه</p></li>
       </ul>
     </section>
-
-    <p style="text-align:center; font-size:12px; opacity:.55; margin-top:6px;">«تمامی آیتم‌های برگر با سس‌های کچاپ، مک و باربیکیو قابل سرو است.»</p>
   </main>
 
   <footer>
@@ -123,6 +130,7 @@
     <p class="footer-note">GOOD FOOD, GOOD MOOD</p>
   </footer>
 
+  <script src="menu.js"></script>
   <script src="reveal.js"></script>
 </body>
 </html>

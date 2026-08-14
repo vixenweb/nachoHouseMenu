@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Nacho House | مدیریت قیمت‌ها</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-page">
+  <header class="site-header">
+    <div class="header-inner">
+      <span class="star s1">★</span><span class="star s2">★</span><span class="star s3">★</span>
+      <h1 class="brand-title">NACHO HOUSE</h1>
+    </div>
+    <div class="brand-rule"></div>
+    <p class="brand-tagline">PRICE MANAGEMENT</p>
+    <div class="checker"></div>
+  </header>
+
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <div>
+        <h2 class="page-title">مدیریت قیمت‌ها</h2>
+        <p class="page-subtitle">ADMIN PANEL</p>
+      </div>
+      <a class="back-link" href="index.html">بازگشت به منو</a>
+    </div>
+
+    <div class="admin-notice">
+      قیمت‌ها را فقط به <strong>ریال</strong> وارد کنید. مثال: <strong>2500000</strong>
+    </div>
+
+    <div id="status" class="admin-status" role="status" aria-live="polite"></div>
+    <form id="price-form" autocomplete="off">
+      <div id="menu-container"></div>
+      <button id="save-button" class="save-button" type="submit">ذخیره همه قیمت‌ها</button>
+    </form>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

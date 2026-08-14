@@ -1,0 +1,4 @@
+# Local Cloudflare secrets — never commit these
+.dev.vars*
+.env*
+.wrangler/

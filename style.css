@@ -177,7 +177,7 @@ main {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lift);
   }
-  .choice-card:hover .choice-icon { transform: scale(1.12) rotate(-4deg); }
+  .choice-card:hover .choice-icon { transform: scale(1.18) rotate(-4deg); }
   .choice-card:hover::after { transform: translateX(140%) skewX(-12deg); }
 }
 
@@ -185,7 +185,7 @@ main {
   content: "";
   position: absolute;
   inset: 6px;
-  border: 1px dashed var(--gold);
+  border: 1px dashed var(--red);
   border-radius: 13px;
   pointer-events: none;
   opacity: 0.6;
@@ -208,7 +208,7 @@ main {
 }
 
 .choice-icon {
-  font-size: 46px;
+  font-size: 52px;
   margin-bottom: 12px;
   display: block;
   transition: transform 0.35s ease;
@@ -218,8 +218,8 @@ main {
 
 .icon-sparkles {
   position: absolute;
-  width: 104px;
-  height: 82px;
+  width: 128px;
+  height: 100px;
   left: 50%;
   top: 34px;
   transform: translateX(-50%);
@@ -229,16 +229,23 @@ main {
 
 .icon-sparkle {
   position: absolute;
-  color: var(--gold);
+  color: #D8A93D;
   line-height: 1;
-  text-shadow: 0 0 7px rgba(201, 154, 63, 0.28);
+  text-shadow:
+    0 0 5px rgba(216, 169, 61, 0.78),
+    0 0 12px rgba(216, 169, 61, 0.46);
   animation: icon-sparkle-twinkle 2.2s ease-in-out infinite;
 }
 
 .sparkle-1 { top: 4px; right: 8px; font-size: 15px; animation-delay: 0s; }
-.sparkle-2 { top: 30px; left: 3px; font-size: 11px; color: var(--red); animation-delay: .55s; }
+.sparkle-2 { top: 32px; left: 3px; font-size: 12px; color: #D8A93D; animation-delay: .55s; }
 .sparkle-3 { bottom: 3px; right: 18px; font-size: 12px; animation-delay: 1.05s; }
 .sparkle-4 { bottom: 19px; left: 17px; font-size: 18px; animation-delay: 1.55s; }
+.sparkle-5 { top: 16px; left: 28px; font-size: 10px; animation-delay: .25s; }
+.sparkle-6 { top: 52px; right: 2px; font-size: 15px; animation-delay: .8s; }
+.sparkle-7 { bottom: 18px; left: 2px; font-size: 11px; animation-delay: 1.3s; }
+.sparkle-8 { top: 62px; left: 30px; font-size: 9px; animation-delay: 1.8s; }
+
 
 @keyframes icon-sparkle-twinkle {
   0%, 100% { opacity: .28; transform: scale(.72) rotate(0deg); }
@@ -255,7 +262,7 @@ main {
   letter-spacing: 0.5px;
 }
 
-.choice-card.food .choice-title { color: var(--red); }
+.choice-card.food .choice-title { color: var(--navy); }
 .choice-card.drinks .choice-title { color: var(--navy); }
 
 .choice-desc {
@@ -393,11 +400,7 @@ main {
 }
 
 /* ---------- Item rows ---------- */
-.item-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+.item-list { list-style: none; margin: 0; padding: 0; }
 
 .item {
   display: block;
@@ -405,7 +408,6 @@ main {
   border-bottom: 1px dashed var(--paper-line);
   transition: background 0.2s ease;
 }
-
 .item:last-child { border-bottom: none; }
 
 @media (hover: hover) {
@@ -464,87 +466,111 @@ main {
     border-radius: 14px;
     margin-bottom: 16px;
   }
-
   .category-head { gap: 8px; }
-
   .category-icon {
     width: 35px;
     height: 35px;
     font-size: 17px;
   }
-
   .category-name { font-size: 19px; }
+  .item { padding: 12px 1px 11px; }
+  .item-head { gap: 10px; }
+  .item-name { font-size: 14.5px; }
+  .item-price { font-size: 13px; }
+  .item-desc { font-size: 12px; line-height: 1.8; }
+}
 
-  .item {
-    padding: 12px 1px 11px;
+
+/* ---------- Menu category navigation ---------- */
+.menu-categories {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin: 0 0 18px;
+  padding: 8px;
+  background: var(--paper);
+  border: 1px solid var(--paper-line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.menu-categories::-webkit-scrollbar { display: none; }
+
+.menu-categories a {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 6px 13px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--navy);
+  font-size: 12.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+@media (hover: hover) {
+  .menu-categories a:hover {
+    background: var(--gold);
+    color: var(--white);
+    transform: translateY(-1px);
   }
+}
+.menu-categories a:active {
+  background: var(--gold);
+  color: var(--white);
+  transform: scale(.97);
+}
 
-  .item-head {
-    gap: 10px;
+.category { scroll-margin-top: 18px; }
+
+.burger-note {
+  margin: 5px 0 0;
+  padding: 0 2px;
+  font-size: 11.5px;
+  line-height: 1.7;
+  color: var(--navy);
+  opacity: .62;
+}
+
+@media (max-width: 559px) {
+  .menu-categories {
+    gap: 6px;
+    margin-bottom: 16px;
+    padding: 7px;
+    border-radius: 12px;
   }
-
-  .item-name {
-    font-size: 14.5px;
+  .menu-categories a {
+    min-height: 34px;
+    padding: 5px 11px;
+    font-size: 11.5px;
   }
-
-  .item-price {
-    font-size: 13px;
-  }
-
-  .item-desc {
-    font-size: 12px;
-    line-height: 1.8;
+  .burger-note {
+    font-size: 11px;
+    line-height: 1.75;
   }
 }
 
 
 /* ---------- Mobile-first polish ---------- */
 @media (max-width: 559px) {
-  main {
-    padding: 20px 12px 30px;
-  }
-
-  .site-header {
-    padding-top: 18px;
-  }
-
-  .brand-title {
-    font-size: clamp(30px, 10vw, 42px);
-  }
-
-  .choice-grid {
-    gap: 14px;
-  }
-
-  .choice-card {
-    padding: 31px 17px 25px;
-    border-radius: 15px;
-  }
-
-  .choice-desc {
-    font-size: 12.5px;
-  }
-
-  .back-link {
-    font-size: 13px;
-    padding: 7px 13px;
-    margin-bottom: 16px;
-  }
-
-  .page-title {
-    font-size: 27px;
-  }
-
-  .page-subtitle {
-    margin-bottom: 20px;
-  }
-
-  .promo-strip {
-    margin-bottom: 20px;
-    padding: 10px 12px;
-  }
+  main { padding: 20px 12px 30px; }
+  .site-header { padding-top: 18px; }
+  .brand-title { font-size: clamp(30px, 10vw, 42px); }
+  .choice-grid { gap: 14px; }
+  .choice-card { padding: 31px 17px 25px; border-radius: 15px; }
+  .choice-desc { font-size: 12.5px; }
+  .back-link { font-size: 13px; padding: 7px 13px; margin-bottom: 16px; }
+  .page-title { font-size: 27px; }
+  .page-subtitle { margin-bottom: 20px; }
+  .promo-strip { margin-bottom: 20px; padding: 10px 12px; }
 }
-
 /* ---------- Footer ---------- */
 footer {
   background: var(--navy);
