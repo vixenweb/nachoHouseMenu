@@ -1,0 +1,242 @@
+{
+  "burger-classic": {
+    "name": "کلاسیک برگر",
+    "amount": null
+  },
+  "burger-spicy": {
+    "name": "اسپایسی برگر",
+    "amount": null
+  },
+  "burger-caramel": {
+    "name": "کارامِلایز برگر",
+    "amount": null
+  },
+  "burger-cheese": {
+    "name": "چیز برگر",
+    "amount": null
+  },
+  "burger-bacon": {
+    "name": "بیکن برگر",
+    "amount": null
+  },
+  "burger-chicken": {
+    "name": "چیکن برگر",
+    "amount": null
+  },
+  "burger-mushroom": {
+    "name": "ماشروم برگر",
+    "amount": null
+  },
+  "combo-royal": {
+    "name": "رویال کامبو",
+    "amount": null
+  },
+  "nacho-chicken": {
+    "name": "ناچوز مرغ",
+    "amount": null
+  },
+  "nacho-meat": {
+    "name": "ناچوز گوشت",
+    "amount": null
+  },
+  "nacho-mix": {
+    "name": "ناچوز میکس",
+    "amount": null
+  },
+  "pasta-alfredo-penne": {
+    "name": "پنه آلفردو",
+    "amount": null
+  },
+  "pasta-alfredo-chicken": {
+    "name": "چیکن آلفردو",
+    "amount": null
+  },
+  "fries-classic": {
+    "name": "فرنچ فرایز",
+    "amount": null
+  },
+  "fries-alfredo": {
+    "name": "سیب آلفردو",
+    "amount": null
+  },
+  "fries-alfredo-special": {
+    "name": "سیب آلفردو اسپشیال",
+    "amount": null
+  },
+  "fries-bacon": {
+    "name": "سیب بیکن",
+    "amount": null
+  },
+  "salad-caesar": {
+    "name": "سالاد سزار",
+    "amount": null
+  },
+  "coffee-plain": {
+    "name": "قهوه",
+    "amount": null
+  },
+  "coffee-espresso-single": {
+    "name": "اسپرسو تک",
+    "amount": null
+  },
+  "coffee-espresso-double": {
+    "name": "اسپرسو دبل",
+    "amount": null
+  },
+  "coffee-americano": {
+    "name": "امریکانو",
+    "amount": null
+  },
+  "coffee-cappuccino": {
+    "name": "کاپوچینو",
+    "amount": null
+  },
+  "coffee-nescafe-milk": {
+    "name": "شیر نسکافه",
+    "amount": null
+  },
+  "coffee-latte-biscuit": {
+    "name": "لته بیسکویت",
+    "amount": null
+  },
+  "coffee-latte-macchiato": {
+    "name": "لته ماکیاتو",
+    "amount": null
+  },
+  "coffee-latte": {
+    "name": "لته",
+    "amount": null
+  },
+  "cold-lemonade": {
+    "name": "لیموناد",
+    "amount": null
+  },
+  "cold-redvelvet": {
+    "name": "رد ولوت",
+    "amount": null
+  },
+  "cold-pinacolada": {
+    "name": "پینوکولا",
+    "amount": null
+  },
+  "cold-mojito": {
+    "name": "موهیتو",
+    "amount": null
+  },
+  "cold-redmojito": {
+    "name": "رد موهیتو",
+    "amount": null
+  },
+  "cold-goldenberry": {
+    "name": "گلدن بری",
+    "amount": null
+  },
+  "cold-bluesky": {
+    "name": "بلو اسکای",
+    "amount": null
+  },
+  "hot-chocolate": {
+    "name": "هات چاکلت",
+    "amount": null
+  },
+  "hot-pink-chocolate": {
+    "name": "پینک چاکلت",
+    "amount": null
+  },
+  "hot-hazelnut": {
+    "name": "هات فندوق",
+    "amount": null
+  },
+  "hot-milk-biscuit": {
+    "name": "شیر بیسکویت",
+    "amount": null
+  },
+  "hot-milk-honey": {
+    "name": "شیر عسل",
+    "amount": null
+  },
+  "hot-tea-brewed": {
+    "name": "چای دمی",
+    "amount": null
+  },
+  "hot-tea-masala": {
+    "name": "چای ماسالا",
+    "amount": null
+  },
+  "hot-tea-kork": {
+    "name": "چای کرک",
+    "amount": null
+  },
+  "matcha-ice-spirulina-latte": {
+    "name": "آیس اسپرولینا لته",
+    "amount": null
+  },
+  "matcha-ice-matcha-latte": {
+    "name": "آیس ماچا لته",
+    "amount": null
+  },
+  "matcha-spirulina-latte": {
+    "name": "اسپرولینا لته",
+    "amount": null
+  },
+  "matcha-latte": {
+    "name": "ماچا لته",
+    "amount": null
+  },
+  "shake-vanilla": {
+    "name": "وانیل",
+    "amount": null
+  },
+  "shake-chocolate": {
+    "name": "شکلات",
+    "amount": null
+  },
+  "shake-nutella": {
+    "name": "نوتلا",
+    "amount": null
+  },
+  "shake-lotus": {
+    "name": "لوتوس",
+    "amount": null
+  },
+  "shake-strawberry": {
+    "name": "توت فرنگی",
+    "amount": null
+  },
+  "shake-banana-chocolate": {
+    "name": "موز و شکلات",
+    "amount": null
+  },
+  "shake-peanut": {
+    "name": "بادام زمینی",
+    "amount": null
+  },
+  "coldbar-ice-americano": {
+    "name": "آیس امریکانو",
+    "amount": null
+  },
+  "coldbar-ice-macchiato": {
+    "name": "آیس ماکیاتو",
+    "amount": null
+  },
+  "coldbar-ice-romano": {
+    "name": "آیس رومانو",
+    "amount": null
+  },
+  "coldbar-ice-latte": {
+    "name": "آیس لته",
+    "amount": null
+  },
+  "coldbar-affogato-classic": {
+    "name": "آفوگاتو کلاسیک",
+    "amount": null
+  },
+  "coldbar-affogato-lotus": {
+    "name": "آفوگاتو لوتوس",
+    "amount": null
+  },
+  "coldbar-affogato-nutella": {
+    "name": "آفوگاتو نوتلا",
+    "amount": null
+  }
+}
