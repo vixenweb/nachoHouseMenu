@@ -73,91 +73,91 @@
   },
   "coffee-plain": {
     "name": "قهوه",
-    "amount": null
+    "amount": 990000
   },
   "coffee-espresso-single": {
     "name": "اسپرسو تک",
-    "amount": 990000
+    "amount": null
   },
   "coffee-espresso-double": {
     "name": "اسپرسو دبل",
-    "amount": 990000
+    "amount": null
   },
   "coffee-americano": {
     "name": "امریکانو",
-    "amount": 1490000
+    "amount": null
   },
   "coffee-cappuccino": {
     "name": "کاپوچینو",
-    "amount": 1790000
+    "amount": null
   },
   "coffee-nescafe-milk": {
     "name": "شیر نسکافه",
-    "amount": 1950000
+    "amount": null
   },
   "coffee-latte-biscuit": {
     "name": "لته بیسکویت",
-    "amount": 2390000
+    "amount": null
   },
   "coffee-latte-macchiato": {
     "name": "لته ماکیاتو",
-    "amount": 2290000
+    "amount": null
   },
   "coffee-latte": {
     "name": "لته",
-    "amount": 1890000
+    "amount": null
   },
   "cold-lemonade": {
     "name": "لیموناد",
-    "amount": 2190000
+    "amount": null
   },
   "cold-redvelvet": {
     "name": "رد ولوت",
-    "amount": 2790000
+    "amount": null
   },
   "cold-pinacolada": {
     "name": "پینوکولا",
-    "amount": 2990000
+    "amount": null
   },
   "cold-mojito": {
     "name": "موهیتو",
-    "amount": 2490000
+    "amount": null
   },
   "cold-redmojito": {
     "name": "رد موهیتو",
-    "amount": 2690000
+    "amount": null
   },
   "cold-goldenberry": {
     "name": "گلدن بری",
-    "amount": 3190000
+    "amount": null
   },
   "cold-bluesky": {
     "name": "بلو اسکای",
-    "amount": 2490000
+    "amount": null
   },
   "hot-chocolate": {
     "name": "هات چاکلت",
-    "amount": 1950000
+    "amount": null
   },
   "hot-pink-chocolate": {
     "name": "پینک چاکلت",
-    "amount": null
+    "amount": 2190000
   },
   "hot-hazelnut": {
     "name": "هات فندوق",
-    "amount": null
+    "amount": 2250000
   },
   "hot-milk-biscuit": {
     "name": "شیر بیسکویت",
-    "amount": null
+    "amount": 2190000
   },
   "hot-milk-honey": {
     "name": "شیر عسل",
-    "amount": null
+    "amount": 1890000
   },
   "hot-tea-brewed": {
     "name": "چای دمی",
-    "amount": null
+    "amount": 800000
   },
   "hot-tea-masala": {
     "name": "چای ماسالا",
