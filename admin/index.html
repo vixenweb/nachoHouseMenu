@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Nacho House | مدیریت قیمت‌ها</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="brand-title" style="font-size: clamp(26px, 8vw, 38px);">NACHO HOUSE</h1>
+    </div>
+    <div class="brand-rule"></div>
+    <p class="brand-tagline">پنل مدیریت قیمت‌ها</p>
+    <div class="checker"></div>
+  </header>
+
+  <main class="admin-shell">
+
+    <!-- Token gate: shown until a valid GitHub token unlocks the form -->
+    <section id="gate" class="gate-card">
+      <h2>ورود</h2>
+      <p>برای ویرایش قیمت‌ها، توکن دسترسی گیت‌هابی که براتون ساخته شده رو وارد کنید.</p>
+      <input type="password" id="gate-token" placeholder="توکن گیت‌هاب (ghp_...)" autocomplete="off">
+      <label class="remember">
+        <input type="checkbox" id="gate-remember" checked>
+        این دستگاه رو به‌خاطر بسپار
+      </label>
+      <button type="button" id="gate-btn" class="gate-btn">ورود به پنل</button>
+      <p id="gate-error" class="gate-error">توکن نامعتبره یا دسترسی لازم رو نداره. دوباره امتحان کنید.</p>
+    </section>
+
+    <!-- Price editor: hidden until unlocked -->
+    <div id="editor" class="hidden">
+      <div class="admin-intro">
+        <p>قیمت هر آیتم رو به ریال وارد کن و «ذخیره» رو بزن. تغییرات حدود ۱ دقیقه دیگه روی سایت میاد.</p>
+      </div>
+      <div id="admin-status" class="admin-status"></div>
+      <p id="admin-skeleton" class="admin-skeleton">در حال بارگذاری…</p>
+      <form id="admin-form"></form>
+      <div class="admin-actions">
+        <button type="submit" form="admin-form" id="admin-save-btn" class="admin-save-btn">ذخیره قیمت‌ها</button>
+        <button type="button" id="admin-logout-btn" class="admin-logout-btn">خروج از پنل</button>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="checker"></div>
+    <p class="footer-note">GOOD FOOD, GOOD MOOD</p>
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+</html>
