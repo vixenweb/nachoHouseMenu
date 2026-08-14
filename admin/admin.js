@@ -208,8 +208,14 @@
     Object.keys(state.prices).forEach(function (id) {
       var input = document.getElementById('price-' + id);
       var raw = input && input.value ? input.value.replace(/,/g, '').trim() : '';
-      var val = raw !== '' ? Number(raw) : null;
-      merged[id] = { name: state.prices[id].name, amount: val !== null && !isNaN(val) ? val : null };
+      var val;
+      if (raw !== '') {
+        val = Number(raw);
+      } else {
+        // Preserve previous amount if the admin left the field empty
+        val = state.prices[id] && state.prices[id].amount !== undefined ? state.prices[id].amount : null;
+      }
+      merged[id] = { name: (state.prices[id] && state.prices[id].name) || id, amount: val !== null && !isNaN(val) ? val : null };
     });
 
     var body = {
