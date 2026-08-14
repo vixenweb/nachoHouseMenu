@@ -9,6 +9,12 @@
 .admin-intro { text-align: center; margin-bottom: 22px; }
 .admin-intro p { font-size: 13.5px; color: var(--navy); opacity: .7; margin: 4px 0 0; }
 
+.back-menu {
+    display: inline-block;
+    font-size: 14px;
+    text-decoration: underline;
+    padding-top: 12px;
+}
 /* ---------- Token gate ---------- */
 .gate-card {
   max-width: 420px;
