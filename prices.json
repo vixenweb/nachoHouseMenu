@@ -1,242 +1,242 @@
 {
   "burger-classic": {
     "name": "کلاسیک برگر",
-    "amount": 4800000
+    "amount": 480
   },
   "burger-spicy": {
     "name": "اسپایسی برگر",
-    "amount": 5300000
+    "amount": 530
   },
   "burger-caramel": {
     "name": "کارامِلایز برگر",
-    "amount": 5400000
+    "amount": 540
   },
   "burger-cheese": {
     "name": "چیز برگر",
-    "amount": 5100000
+    "amount": 510
   },
   "burger-bacon": {
     "name": "بیکن برگر",
-    "amount": 5900000
+    "amount": 590
   },
   "burger-chicken": {
     "name": "چیکن برگر",
-    "amount": 6200000
+    "amount": 620
   },
   "burger-mushroom": {
     "name": "ماشروم برگر",
-    "amount": 5100000
+    "amount": 510
   },
   "combo-royal": {
     "name": "رویال کامبو",
-    "amount": 9000000
+    "amount": 900
   },
   "nacho-chicken": {
     "name": "ناچوز مرغ",
-    "amount": 6000000
+    "amount": 600
   },
   "nacho-meat": {
     "name": "ناچوز گوشت",
-    "amount": 6000000
+    "amount": 600
   },
   "nacho-mix": {
     "name": "ناچوز میکس",
-    "amount": 6000000
+    "amount": 600
   },
   "pasta-alfredo-penne": {
     "name": "پنه آلفردو",
-    "amount": 3990000
+    "amount": 399
   },
   "pasta-alfredo-chicken": {
     "name": "چیکن آلفردو",
-    "amount": 5100000
+    "amount": 510
   },
   "fries-classic": {
     "name": "فرنچ فرایز",
-    "amount": 2700000
+    "amount": 270
   },
   "fries-alfredo": {
     "name": "سیب آلفردو",
-    "amount": 3800000
+    "amount": 380
   },
   "fries-alfredo-special": {
     "name": "سیب آلفردو اسپشیال",
-    "amount": 4800000
+    "amount": 480
   },
   "fries-bacon": {
     "name": "سیب بیکن",
-    "amount": 4800000
+    "amount": 480
   },
   "salad-caesar": {
     "name": "سالاد سزار",
-    "amount": 5000000
+    "amount": 500
   },
   "coffee-plain": {
     "name": "قهوه",
-    "amount": 990000
+    "amount": 99
   },
   "coffee-espresso-single": {
     "name": "اسپرسو تک",
-    "amount": 990000
+    "amount": 99
   },
   "coffee-espresso-double": {
     "name": "اسپرسو دبل",
-    "amount": 990000
+    "amount": 99
   },
   "coffee-americano": {
     "name": "امریکانو",
-    "amount": 1490000
+    "amount": 149
   },
   "coffee-cappuccino": {
     "name": "کاپوچینو",
-    "amount": 1790000
+    "amount": 179
   },
   "coffee-nescafe-milk": {
     "name": "شیر نسکافه",
-    "amount": 1950000
+    "amount": 195
   },
   "coffee-latte-biscuit": {
     "name": "لته بیسکویت",
-    "amount": 2390000
+    "amount": 239
   },
   "coffee-latte-macchiato": {
     "name": "لته ماکیاتو",
-    "amount": 2290000
+    "amount": 229
   },
   "coffee-latte": {
     "name": "لته",
-    "amount": 1890000
+    "amount": 189
   },
   "cold-lemonade": {
     "name": "لیموناد",
-    "amount": 2190000
+    "amount": 219
   },
   "cold-redvelvet": {
     "name": "رد ولوت",
-    "amount": 2790000
+    "amount": 279
   },
   "cold-pinacolada": {
     "name": "پینوکولا",
-    "amount": 2990000
+    "amount": 299
   },
   "cold-mojito": {
     "name": "موهیتو",
-    "amount": 2490000
+    "amount": 249
   },
   "cold-redmojito": {
     "name": "رد موهیتو",
-    "amount": 2690000
+    "amount": 269
   },
   "cold-goldenberry": {
     "name": "گلدن بری",
-    "amount": 3190000
+    "amount": 319
   },
   "cold-bluesky": {
     "name": "بلو اسکای",
-    "amount": 2490000
+    "amount": 249
   },
   "hot-chocolate": {
     "name": "هات چاکلت",
-    "amount": 1950000
+    "amount": 195
   },
   "hot-pink-chocolate": {
     "name": "پینک چاکلت",
-    "amount": 2190000
+    "amount": 219
   },
   "hot-hazelnut": {
     "name": "هات فندوق",
-    "amount": 2250000
+    "amount": 225
   },
   "hot-milk-biscuit": {
     "name": "شیر بیسکویت",
-    "amount": 2190000
+    "amount": 219
   },
   "hot-milk-honey": {
     "name": "شیر عسل",
-    "amount": 1890000
+    "amount": 189
   },
   "hot-tea-brewed": {
     "name": "چای دمی",
-    "amount": 800000
+    "amount": 80
   },
   "hot-tea-masala": {
     "name": "چای ماسالا",
-    "amount": 1890000
+    "amount": 189
   },
   "hot-tea-kork": {
     "name": "چای کرک",
-    "amount": 1950000
+    "amount": 195
   },
   "matcha-ice-spirulina-latte": {
     "name": "آیس اسپرولینا لته",
-    "amount": 3490000
+    "amount": 349
   },
   "matcha-ice-matcha-latte": {
     "name": "آیس ماچا لته",
-    "amount": 3590000
+    "amount": 359
   },
   "matcha-spirulina-latte": {
     "name": "اسپرولینا لته",
-    "amount": 3790000
+    "amount": 379
   },
   "matcha-latte": {
     "name": "ماچا لته",
-    "amount": 3290000
+    "amount": 329
   },
   "shake-vanilla": {
     "name": "وانیل",
-    "amount": 2490000
+    "amount": 249
   },
   "shake-chocolate": {
     "name": "شکلات",
-    "amount": 2690000
+    "amount": 269
   },
   "shake-nutella": {
     "name": "نوتلا",
-    "amount": 3190000
+    "amount": 319
   },
   "shake-lotus": {
     "name": "لوتوس",
-    "amount": 3290000
+    "amount": 329
   },
   "shake-strawberry": {
     "name": "توت فرنگی",
-    "amount": 3190000
+    "amount": 319
   },
   "shake-banana-chocolate": {
     "name": "موز و شکلات",
-    "amount": 3290000
+    "amount": 329
   },
   "shake-peanut": {
     "name": "بادام زمینی",
-    "amount": 3190000
+    "amount": 319
   },
   "coldbar-ice-americano": {
     "name": "آیس امریکانو",
-    "amount": 1550000
+    "amount": 155
   },
   "coldbar-ice-macchiato": {
     "name": "آیس ماکیاتو",
-    "amount": 2440000
+    "amount": 244
   },
   "coldbar-ice-romano": {
     "name": "آیس رومانو",
-    "amount": 2790000
+    "amount": 279
   },
   "coldbar-ice-latte": {
     "name": "آیس لته",
-    "amount": 2050000
+    "amount": 209
   },
   "coldbar-affogato-classic": {
     "name": "آفوگاتو کلاسیک",
-    "amount": 2440000
+    "amount": 244
   },
   "coldbar-affogato-lotus": {
     "name": "آفوگاتو لوتوس",
-    "amount": 2840000
+    "amount": 284
   },
   "coldbar-affogato-nutella": {
     "name": "آفوگاتو نوتلا",
-    "amount": 2890000
+    "amount": 289
   }
 }
