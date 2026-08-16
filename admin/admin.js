@@ -137,7 +137,7 @@
 
         var unit = document.createElement('span');
         unit.className = 'unit';
-        unit.textContent = 'ریال';
+        unit.textContent = 'تومان';
         fieldWrap.appendChild(unit);
 
         row.appendChild(fieldWrap);
