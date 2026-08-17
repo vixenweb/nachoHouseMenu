@@ -164,12 +164,16 @@ main {
 
 .choice-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
-@media (min-width: 560px) {
-  .choice-grid { grid-template-columns: 1fr 1fr; }
+@media (min-width: 620px) {
+  .choice-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+}
+
+@media (min-width: 900px) {
+  .choice-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 .choice-card {
@@ -193,8 +197,41 @@ main {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lift);
   }
-  .choice-card:hover .choice-icon { transform: scale(1.18) rotate(-4deg); }
+  .choice-card:hover .icon-wrap { transform: scale(1.1) rotate(-3deg); }
+  .choice-card:hover .icon-glow { opacity: 1; }
   .choice-card:hover::after { transform: translateX(140%) skewX(-12deg); }
+}
+
+/* ---------- Menu section eyebrow (غذا / نوشیدنی divider) ---------- */
+.menu-eyebrow {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 22px 0 4px;
+}
+
+.choice-grid > .menu-eyebrow:first-child { margin-top: 0; }
+
+.menu-eyebrow-line {
+  flex: 1;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, var(--gold) 0 8px, transparent 8px 14px);
+}
+
+.menu-eyebrow-text {
+  font-family: 'Lalezar', 'Vazirmatn', sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--red);
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+@media (max-width: 559px) {
+  .menu-eyebrow { margin: 16px 0 0; gap: 10px; }
+  .choice-grid > .menu-eyebrow:first-child { margin-top: 0; }
+  .menu-eyebrow-text { font-size: 16px; }
 }
 
 .choice-card::before {
@@ -223,50 +260,84 @@ main {
   opacity: 0.85;
 }
 
-.choice-icon {
+/* ---------- Icon + sparkle ornament ----------
+   A slow-rotating halo of 8 gold marks orbits the icon (never overlapping the
+   emoji itself), while each mark twinkles independently. Everything is sized
+   in em relative to .icon-wrap's own font-size, so the whole ornament scales
+   down automatically at the mobile font-size override — no separate pixel
+   tweaks needed per breakpoint. */
+.icon-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 52px;
-  margin-bottom: 12px;
-  display: block;
+  width: 1.7em;
+  height: 1.7em;
+  line-height: 1;
+  margin: 0 auto 12px;
   transition: transform 0.35s ease;
+}
+
+.choice-icon {
+  font-size: 1em;
+  display: block;
   position: relative;
   z-index: 2;
 }
 
-.icon-sparkles {
+.icon-glow {
   position: absolute;
-  width: 128px;
-  height: 100px;
-  left: 50%;
-  top: 34px;
-  transform: translateX(-50%);
-  pointer-events: none;
+  inset: 0.12em;
+  background: radial-gradient(circle, rgba(201, 154, 63, 0.4), transparent 72%);
+  filter: blur(0.1em);
+  border-radius: 50%;
   z-index: 1;
+  opacity: 0.75;
+  transition: opacity 0.35s ease;
+}
+
+.icon-sparkle-ring {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  animation: sparkle-orbit 26s linear infinite;
+  transition: animation-duration 0.35s ease;
 }
 
 .icon-sparkle {
   position: absolute;
-  color: #D8A93D;
+  color: var(--gold);
   line-height: 1;
-  text-shadow:
-    0 0 5px rgba(216, 169, 61, 0.78),
-    0 0 12px rgba(216, 169, 61, 0.46);
-  animation: icon-sparkle-twinkle 2.2s ease-in-out infinite;
+  text-shadow: 0 0 0.22em rgba(201, 154, 63, 0.6);
+  animation: icon-sparkle-twinkle 2.6s ease-in-out infinite;
 }
 
-.sparkle-1 { top: 4px; right: 8px; font-size: 15px; animation-delay: 0s; }
-.sparkle-2 { top: 32px; left: 3px; font-size: 12px; color: #D8A93D; animation-delay: .55s; }
-.sparkle-3 { bottom: 3px; right: 18px; font-size: 12px; animation-delay: 1.05s; }
-.sparkle-4 { bottom: 19px; left: 17px; font-size: 18px; animation-delay: 1.55s; }
-.sparkle-5 { top: 16px; left: 28px; font-size: 10px; animation-delay: .25s; }
-.sparkle-6 { top: 52px; right: 2px; font-size: 15px; animation-delay: .8s; }
-.sparkle-7 { bottom: 18px; left: 2px; font-size: 11px; animation-delay: 1.3s; }
-.sparkle-8 { top: 62px; left: 30px; font-size: 9px; animation-delay: 1.8s; }
+/* Six points laid out in a hexagon around the icon, plus two tiny dust
+   flecks at the sides — varied glyphs/sizes give the halo depth instead of
+   a uniform ring of identical dots. */
+.spk-1 { top: -4%;  left: 50%; font-size: 0.24em; animation-delay: 0s; }
+.spk-2 { top: 18%;  left: 92%; font-size: 0.15em; animation-delay: .4s; }
+.spk-3 { top: 70%;  left: 94%; font-size: 0.11em; animation-delay: 1.6s; }
+.spk-4 { top: 100%; left: 54%; font-size: 0.2em;  animation-delay: 1s; }
+.spk-5 { top: 74%;  left: 4%;  font-size: 0.14em; animation-delay: 2.1s; }
+.spk-6 { top: 16%;  left: 2%;  font-size: 0.17em; animation-delay: .8s; }
+.spk-7 { top: 46%;  left: 100%; font-size: 0.08em; animation-delay: 1.4s; }
+.spk-8 { top: 48%;  left: -2%;  font-size: 0.08em; animation-delay: 1.9s; }
 
+@keyframes sparkle-orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
 @keyframes icon-sparkle-twinkle {
-  0%, 100% { opacity: .28; transform: scale(.72) rotate(0deg); }
-  45% { opacity: 1; transform: scale(1.12) rotate(10deg); }
-  70% { opacity: .55; transform: scale(.9) rotate(-6deg); }
+  0%, 100% { opacity: .3; transform: scale(.7); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@media (hover: hover) {
+  .choice-card:hover .icon-sparkle-ring { animation-duration: 9s; }
 }
 
 .choice-title {
@@ -585,9 +656,11 @@ main {
   main { padding: 20px 12px 30px; }
   .site-header { padding-top: 18px; }
   .brand-title { font-size: clamp(30px, 10vw, 42px); }
-  .choice-grid { gap: 14px; }
-  .choice-card { padding: 31px 17px 25px; border-radius: 15px; }
-  .choice-desc { font-size: 12.5px; }
+  .choice-grid { gap: 12px; }
+  .choice-card { padding: 22px 12px 20px; border-radius: 15px; }
+  .icon-wrap { font-size: 38px; margin-bottom: 8px; }
+  .choice-title { font-size: 20px; }
+  .choice-desc { font-size: 11.5px; line-height: 1.55; }
   .back-link { font-size: 13px; padding: 7px 13px; margin-bottom: 16px; }
   .page-title { font-size: 27px; }
   .page-subtitle { margin-bottom: 20px; }
