@@ -21,7 +21,7 @@ no dedicated domain.**
 
 ## How it works
 
-1. Menu pages (`food.html`, `drinks.html`) render item names/descriptions statically, then fetch
+1. Menu pages (`Appetizers.html`, `burger.html`, ...) render item names/descriptions statically, then fetch
    `prices.json` client-side and fill in the prices.
 2. `admin/` is a plain static page — no server-side auth is possible on GitHub Pages, so instead of
    building a fake client-side login, it uses a real GitHub Personal Access Token as the
