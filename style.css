@@ -708,6 +708,15 @@ footer .checker { margin-bottom: 18px; opacity: 0.9; }
   opacity: 0.9;
 }
 
+.footer-sign {
+  font-family: 'LalezarFile1', 'Vazirmatn', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-top: 14px;
+  opacity: 0.9;
+}
+
 .choice-title {
     font-family: 'LalezarFile1' !important;
 }
